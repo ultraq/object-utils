@@ -9,6 +9,16 @@ object-utils
 A collection of utilities for JavaScript objects.
 
 
+Installation
+------------
+
+Via npm:
+
+```
+npm install @ultraq/object-utils --save
+```
+
+
 API
 ---
 

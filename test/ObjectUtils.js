@@ -1,7 +1,5 @@
 /* eslint-env mocha */
-
 import {merge} from '../src/ObjectUtils';
-
 import {assert} from 'chai';
 
 /**
