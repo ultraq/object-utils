@@ -2,6 +2,8 @@
 object-utils
 ============
 
+[![Build Status](https://travis-ci.org/ultraq/object-utils.svg?branch=master)](https://travis-ci.org/ultraq/object-utils)
+
 A collection of utilities for JavaScript objects.
 
 
