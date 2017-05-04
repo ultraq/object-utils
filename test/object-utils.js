@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /* eslint-env mocha */
-import {merge} from '../src/ObjectUtils';
+import {merge} from '../object-utils';
 import {assert} from 'chai';
 
 /**

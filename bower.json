@@ -10,18 +10,18 @@
 		"url": "https://github.com/ultraq/object-utils.git"
 	},
 	"keywords": [
+		"es6",
 		"object",
 		"utilities",
 		"merge"
 	],
-	"main": "dist/object-utils.js",
+	"main": "object-utils.js",
 	"moduleType": [
-		"globals",
-		"amd",
-		"node"
+		"es6"
 	],
 	"ignore": [
-		"**/.*",
+		"/test",
+		".*",
 		"package.json"
 	]
 }

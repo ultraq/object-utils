@@ -18,6 +18,12 @@ Via npm:
 npm install @ultraq/object-utils --save
 ```
 
+Via bower:
+
+```
+bower install https://github.com/ultraq/object-utils.git --save
+```
+
 
 API
 ---

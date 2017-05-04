@@ -1,6 +1,6 @@
 {
 	"name": "@ultraq/object-utils",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "A collection of utilities for JavaScript objects",
 	"author": "Emanuel Rabina <emanuelrabina@gmail.com> (http://www.ultraq.net.nz/)",
 	"license": "Apache-2.0",
@@ -13,11 +13,11 @@
 		"utilities",
 		"merge"
 	],
-	"main": "dist/object-utils.js",
-	"module": "src/ObjectUtils.js",
+	"main": "object-utils.node.js",
+	"module": "object-utils.js",
 	"scripts": {
-		"build": "rollup --input src/ObjectUtils.js --format umd --name ObjectUtils --output dist/object-utils.js",
-		"lint": "eslint src test",
+		"build": "rollup --input object-utils.js --format cjs --output object-utils.node.js",
+		"lint": "eslint object-utils.js test",
 		"test": "npm run lint && mocha --require babel-register",
 		"prepublish": "npm run build"
 	},
