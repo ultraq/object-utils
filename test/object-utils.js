@@ -86,5 +86,15 @@ describe('ObjectUtils', function() {
 				prop3: 'some other property'
 			});
 		});
+
+		it('Falsey sources are treated as no-ops', function() {
+			let target = {
+				prop: 'Hi!'
+			};
+			merge(target, null, undefined);
+			assert.deepEqual(target, {
+				prop: 'Hi!'
+			});
+		});
 	});
 });

@@ -25,13 +25,15 @@
 export function merge(target = {}, ...sources) {
 
 	sources.forEach(source => {
-		Object.keys(source).forEach(key => {
-			let targetValue = target[key];
-			let sourceValue = source[key];
-			target[key] = targetValue instanceof Object && sourceValue instanceof Object ?
-				merge(targetValue, sourceValue) :
-				sourceValue;
-		});
+		if (source) {
+			Object.keys(source).forEach(key => {
+				let targetValue = target[key];
+				let sourceValue = source[key];
+				target[key] = targetValue instanceof Object && sourceValue instanceof Object ?
+					merge(targetValue, sourceValue) :
+					sourceValue;
+			});
+		}
 	});
 	return target;
 }
