@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-/* eslint-env mocha */
-import {merge} from '../object-utils';
-import {assert} from 'chai';
+/* eslint-env jest */
+import {merge} from './object-utils';
 
 /**
  * Tests for the object utilities.
@@ -25,7 +24,7 @@ describe('ObjectUtils', function() {
 
 	describe('#merge', function() {
 
-		it('Merge values from a source object into a target one', function() {
+		test('Merge values from a source object into a target one', function() {
 			let target = {
 				prop1: 'some property',
 				prop2: 'this one gets replaced'
@@ -34,15 +33,15 @@ describe('ObjectUtils', function() {
 				prop2: 'replaced!',
 				prop3: 'some other property'
 			};
-			merge(target, source);
-			assert.deepEqual(target, {
+			target = merge(target, source);
+			expect(target).toEqual({
 				prop1: 'some property',
 				prop2: 'replaced!',
 				prop3: 'some other property'
 			});
 		});
 
-		it('Deep-merge objects too', function() {
+		test('Deep-merge objects too', function() {
 			let target = {
 				obj1: {
 					prop1: 'object property'
@@ -53,8 +52,8 @@ describe('ObjectUtils', function() {
 					prop2: 'another object property'
 				}
 			};
-			merge(target, source);
-			assert.deepEqual(target, {
+			target = merge(target, source);
+			expect(target).toEqual({
 				obj1: {
 					prop1: 'object property',
 					prop2: 'another object property'
@@ -62,7 +61,7 @@ describe('ObjectUtils', function() {
 			});
 		});
 
-		it('Deep-merge multiple source objects', function() {
+		test('Deep-merge multiple source objects', function() {
 			let target = {
 				prop1: 'some property',
 				prop2: "this one doesn't get replaced"
@@ -77,8 +76,8 @@ describe('ObjectUtils', function() {
 				},
 				prop2: "I'm totally replacing you!"
 			};
-			merge(target, source1, source2);
-			assert.deepEqual(target, {
+			target = merge(target, source1, source2);
+			expect(target).toEqual({
 				prop1: {
 					deepProp: 'Hello!'
 				},
@@ -87,14 +86,20 @@ describe('ObjectUtils', function() {
 			});
 		});
 
-		it('Falsey sources are treated as no-ops', function() {
+		test('Falsey sources are treated as no-ops', function() {
 			let target = {
 				prop: 'Hi!'
 			};
-			merge(target, null, undefined);
-			assert.deepEqual(target, {
+			target = merge(target, null, undefined);
+			expect(target).toEqual({
 				prop: 'Hi!'
 			});
+		});
+
+		test('An undefined target is an empty object', function() {
+			let target = undefined;
+			target = merge(target);
+			expect(target).toEqual({});
 		});
 	});
 });
