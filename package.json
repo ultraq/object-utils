@@ -1,6 +1,6 @@
 {
 	"name": "@ultraq/object-utils",
-	"version": "1.1.1",
+	"version": "1.2.0",
 	"description": "A collection of utilities for JavaScript objects",
 	"author": "Emanuel Rabina <emanuelrabina@gmail.com> (http://www.ultraq.net.nz/)",
 	"license": "Apache-2.0",
