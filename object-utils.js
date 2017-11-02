@@ -37,3 +37,31 @@ export function merge(target = {}, ...sources) {
 	});
 	return target;
 }
+
+/**
+ * Returns a value from an object via a path string that describes the nesting
+ * of objects to get to the value.
+ * 
+ * eg:
+ * 
+ * ```
+ * let object = {
+ *   greeting: {
+ *     message: 'Hello!'
+ *   }
+ * };
+ * let pathToMessage = 'greeting.message';
+ * ```
+ * 
+ * @param {Object} object
+ * @param {String} path A dot-separated string of paths to get to the desired
+ *   value within the object
+ * @return {Object} The value at the given path within the object, or
+ *   `undefined` if the path doesn't resolve within the object.
+ */
+export function navigate(object, path) {
+
+	return path.split('.').reduce((previousValue, pathToken) => {
+		return previousValue && previousValue[pathToken];
+	}, object);
+}

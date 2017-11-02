@@ -15,7 +15,7 @@
  */
 
 /* eslint-env jest */
-import {merge} from './object-utils';
+import {merge, navigate} from './object-utils';
 
 /**
  * Tests for the object utilities.
@@ -100,6 +100,37 @@ describe('ObjectUtils', function() {
 			let target = undefined;
 			target = merge(target);
 			expect(target).toEqual({});
+		});
+	});
+
+	describe('#navigate', function() {
+
+		test('Returns a shallow value', function() {
+			let object = {
+				greeting: 'Hello!'
+			};
+			let result = navigate(object, 'greeting');
+			expect(result).toBe(object.greeting);
+		});
+
+		test('Returns a nested value', function() {
+			let object = {
+				greetings: {
+					morning: {
+						informal: 'Morning!'
+					}
+				}
+			};
+			let result = navigate(object, 'greetings.morning.informal');
+			expect(result).toBe(object.greetings.morning.informal);
+		});
+
+		test('Mismatched path returns `undefined`', function() {
+			let object = {
+				greeting: 'Hello!'
+			};
+			let result = navigate(object, 'nothing');
+			expect(result).toBeUndefined();
 		});
 	});
 });

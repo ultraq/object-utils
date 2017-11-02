@@ -36,3 +36,23 @@ modifying the target object and returning it.
 
  - **target**: object to merge values into
  - **sources**: array of argument list of objects to copy values from
+
+### navigate(object, path)
+
+Returns a value from an object via a path string that describes the nesting of
+objects to get to the value, eg:
+
+```javascript
+let object = {
+  greeting: {
+    message: 'Hello!'
+  }
+};
+let pathToMessage = 'greeting.message';
+```
+
+If the path doesn't resolve to anything, then `undefined` is returned.
+
+ - **object**:  object to search through
+ - **path**: a dot-separated string of paths to get to the desired value within
+   the object
