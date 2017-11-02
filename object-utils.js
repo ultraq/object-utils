@@ -54,8 +54,8 @@ export function merge(target = {}, ...sources) {
  * ```
  * 
  * @param {Object} object
- * @param {String} path A dot-separated string of paths to get to the desired
- *   value within the object
+ * @param {String} path A dot-separated path string to get to the desired value
+ *   within the object
  * @return {Object} The value at the given path within the object, or
  *   `undefined` if the path doesn't resolve within the object.
  */

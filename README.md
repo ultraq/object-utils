@@ -54,5 +54,4 @@ let pathToMessage = 'greeting.message';
 If the path doesn't resolve to anything, then `undefined` is returned.
 
  - **object**:  object to search through
- - **path**: a dot-separated string of paths to get to the desired value within
-   the object
+ - **path**: a dot-separated path string to get to the desired value within the object

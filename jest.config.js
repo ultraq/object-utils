@@ -4,6 +4,8 @@
 module.exports = {
 	collectCoverage: true,
 	coverageReporters: [
-		'lcov', 'text-summary'
+		'html',
+		'lcov',
+		'text-summary'
 	]
 };
