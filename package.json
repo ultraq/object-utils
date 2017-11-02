@@ -20,7 +20,7 @@
 		"lint": "eslint '*.js'",
 		"test": "npm run lint && jest",
 		"coverage": "cat ./coverage/lcov.info | coveralls",
-		"build": "babel object-utils.js --out-file object-utils.node.js",
+		"build": "babel --source-maps true object-utils.js --out-file object-utils.node.js",
 		"prepublish": "npm run build"
 	},
 	"devDependencies": {
