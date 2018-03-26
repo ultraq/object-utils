@@ -1,9 +1,36 @@
 {
-	"presets": [
-		["env", {
-			"targets": {
-				"node": "6.5.0"
-			}
-		}]
-	]
+	"env": {
+		"cjs": {
+			"presets": [
+				["env", {
+					"targets": {
+						"browsers": [
+							"ie 11"
+						]
+					}
+				}]
+			]
+		},
+		"es": {
+			"presets": [
+				["env", {
+					"modules": false,
+					"targets": {
+						"browsers": [
+							"ie 11"
+						]
+					}
+				}]
+			]
+		},
+		"test": {
+			"presets": [
+				["env", {
+					"targets": {
+						"node": "6.5.0"
+					}
+				}]
+			]
+		}
+	}
 }

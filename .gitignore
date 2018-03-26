@@ -2,4 +2,5 @@
 /coverage
 /node_modules
 npm-debug.log
-object-utils.node.js*
+object-utils.cjs.js*
+object-utils.es.js*

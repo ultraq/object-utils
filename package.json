@@ -1,6 +1,6 @@
 {
 	"name": "@ultraq/object-utils",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"description": "A collection of utilities for JavaScript objects",
 	"author": "Emanuel Rabina <emanuelrabina@gmail.com> (http://www.ultraq.net.nz/)",
 	"license": "Apache-2.0",
@@ -14,13 +14,15 @@
 		"merge",
 		"navigate"
 	],
-	"main": "object-utils.node.js",
-	"module": "object-utils.js",
+	"module": "object-utils.es.js",
+	"main": "object-utils.cjs.js",
 	"scripts": {
 		"lint": "eslint '*.js'",
 		"test": "npm run lint && jest",
 		"coverage": "cat ./coverage/lcov.info | coveralls",
-		"build": "babel --source-maps true object-utils.js --out-file object-utils.node.js",
+		"build": "npm run build:cjs && npm run build:es",
+		"build:cjs": "BABEL_ENV=cjs babel object-utils.js --out-file object-utils.cjs.js --source-maps",
+		"build:es": "BABEL_ENV=es babel object-utils.js --out-file object-utils.es.js --source-maps",
 		"prepublish": "npm run build"
 	},
 	"devDependencies": {
