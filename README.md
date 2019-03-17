@@ -13,16 +13,8 @@ A collection of utilities for JavaScript objects.
 Installation
 ------------
 
-Via npm:
-
 ```
-npm install @ultraq/object-utils --save
-```
-
-Via bower:
-
-```
-bower install https://github.com/ultraq/object-utils.git --save
+npm install @ultraq/object-utils
 ```
 
 

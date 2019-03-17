@@ -1,6 +1,6 @@
 {
 	"name": "@ultraq/object-utils",
-	"version": "1.3.0",
+	"version": "2.0.0",
 	"description": "A collection of utilities for JavaScript objects",
 	"author": "Emanuel Rabina <emanuelrabina@gmail.com> (http://www.ultraq.net.nz/)",
 	"license": "Apache-2.0",
@@ -14,10 +14,10 @@
 		"merge",
 		"navigate"
 	],
-	"module": "object-utils.es.js",
 	"main": "object-utils.cjs.js",
+	"module": "object-utils.es.js",
 	"scripts": {
-		"lint": "eslint '*.js'",
+		"lint": "eslint \"*.js\"",
 		"test": "npm run lint && jest",
 		"coverage": "cat ./coverage/lcov.info | coveralls",
 		"build": "npm run build:cjs && npm run build:es",
@@ -26,14 +26,15 @@
 		"prepublish": "npm run build"
 	},
 	"devDependencies": {
-		"babel-cli": "^6.26.0",
-		"babel-preset-env": "^1.6.1",
-		"coveralls": "^2.13.1",
-		"eslint": "^4.8.0",
-		"eslint-config-ultraq": "^2.0.0",
-		"jest": "^21.2.1"
+		"@babel/core": "^7.3.4",
+		"@babel/cli": "^7.2.3",
+		"@babel/preset-env": "^7.3.4",
+		"coveralls": "^3.0.3",
+		"eslint": "^5.15.2",
+		"eslint-config-ultraq": "^2.2.0",
+		"jest": "^24.5.0"
 	},
 	"engines": {
-		"node": ">=6.5.0"
+		"node": ">=8.0.0"
 	}
 }
