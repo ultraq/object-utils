@@ -29,6 +29,16 @@ bower install https://github.com/ultraq/object-utils.git --save
 API
 ---
 
+### equals(object1, object2)
+
+Deep-equality comparison between 2 objects on whether they contain the same
+values as each other.  Only works with objects that act as data structures, not
+classes or the like as this function only compares primitives using identity
+(`===`) comparison.
+
+ - **object1**: 
+ - **object2**: 
+
 ### merge(target, ...sources)
 
 Deep-merges all of the properties of the objects in `sources` with `target`,

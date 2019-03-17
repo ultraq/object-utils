@@ -15,12 +15,41 @@
  */
 
 /* eslint-env jest */
-import {merge, navigate} from './object-utils';
+import {equals, merge, navigate} from './object-utils';
 
 /**
  * Tests for the object utilities.
  */
 describe('ObjectUtils', function() {
+
+	describe('#equals', function() {
+
+		test('Checks nested values', function() {
+			let object1 = {
+				a: 1,
+				b: {
+					c: 3
+				}
+			};
+			let object2 = {
+				a: 1,
+				b: {
+					c: 3
+				}
+			};
+			expect(equals(object1, object2)).toBe(true);
+		});
+
+		test('Uses identity for primitives', function() {
+			let object1 = {
+				a: 1
+			};
+			let object2 = {
+				b: '1'
+			};
+			expect(equals(object1, object2)).toBe(false);
+		});
+	});
 
 	describe('#merge', function() {
 

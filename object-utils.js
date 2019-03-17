@@ -15,6 +15,36 @@
  */
 
 /**
+ * Deep-equality comparison between 2 objects on whether they contain the same
+ * values as each other.  Only works with objects that act as data structures,
+ * not classes or the like as this function only compares primitives using
+ * identity (`===`) comparison.
+ * 
+ * @param {Object} object1
+ * @param {Object} object2
+ * @return {Boolean}
+ */
+export function equals(object1, object2) {
+
+	let keys1 = Object.keys(object1);
+	let keys2 = Object.keys(object2);
+
+	if (keys1.length !== keys2.length) {
+		return false;
+	}
+
+	return keys1.every(key => {
+		let value1 = object1[key];
+		let value2 = object2[key];
+		return typeof value1 === 'object' && typeof value2 === 'object' ?
+			value1 === null && value2 === null ? // null is "object" :|
+				true :
+				equals(value1, value2) :
+			value1 === value2;
+	});
+}
+
+/**
  * Deep-merges all of the properties of the objects in `sources` with `target`,
  * modifying the target object and returning it.
  * 
