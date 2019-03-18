@@ -20,28 +20,37 @@
  * not classes or the like as this function only compares primitives using
  * identity (`===`) comparison.
  * 
- * @param {Object} object1
- * @param {Object} object2
+ * @param {*} object1
+ * @param {*} object2
  * @return {Boolean}
  */
-export function equals(object1, object2) {
+export function equals(object1 = null, object2 = null) {
 
-	let keys1 = Object.keys(object1);
-	let keys2 = Object.keys(object2);
+	// Identity
+	if (object1 === object2) {
+		return true;
+	}
 
-	if (keys1.length !== keys2.length) {
+	// One argument null and the other isn't
+	if (object1 === null && object2 !== null) {
+		return false;
+	}
+	if (object1 !== null && object2 === null) {
 		return false;
 	}
 
-	return keys1.every(key => {
-		let value1 = object1[key];
-		let value2 = object2[key];
-		return typeof value1 === 'object' && typeof value2 === 'object' ?
-			value1 === null && value2 === null ? // null is "object" :|
-				true :
-				equals(value1, value2) :
-			value1 === value2;
-	});
+	// Compare objects
+	if (typeof object1 === 'object' && typeof object2 === 'object') {
+		let keys1 = Object.keys(object1);
+		let keys2 = Object.keys(object2);
+		if (keys1.length !== keys2.length) {
+			return false;
+		}
+		return keys1.every(key => equals(object1[key], object2[key]));
+	}
+
+	// Compare primitives
+	return object1 === object2;
 }
 
 /**

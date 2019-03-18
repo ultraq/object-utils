@@ -49,6 +49,12 @@ describe('ObjectUtils', function() {
 			};
 			expect(equals(object1, object2)).toBe(false);
 		});
+
+		test('null/undefined parameter handling', function() {
+			expect(equals(1, null)).toBe(false);
+			expect(equals(null, 1)).toBe(false);
+			expect(equals(null, null)).toBe(true);
+		});
 	});
 
 	describe('#merge', function() {
