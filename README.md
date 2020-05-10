@@ -40,6 +40,10 @@ modifying the target object and returning it.
 
 ### navigate(object, path)
 
+> This is now natively in JavaScript as the optional chaining operator (`?.`).
+> If you have access to that feature, I suggest you use that instead.  If you
+> don't, then this method will still do the job 🙂
+
 Returns a value from an object via a path string that describes the nesting of
 objects to get to the value, eg:
 
