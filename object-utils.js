@@ -92,6 +92,10 @@ export function merge(target = {}, ...sources) {
  * let pathToMessage = 'greeting.message';
  * ```
  * 
+ * > This is now natively in JavaScript as the optional chaining operator (`?.`).
+ * > If you have access to that feature, I suggest you use that instead.  If you
+ * > don't, then this method will still do the job 🙂
+ * 
  * @param {Object} object
  * @param {String} path A dot-separated path string to get to the desired value
  *   within the object
