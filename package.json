@@ -16,6 +16,7 @@
 	],
 	"main": "object-utils.cjs.js",
 	"module": "object-utils.es.js",
+	"sideEffects": false,
 	"scripts": {
 		"lint": "eslint \"*.js\"",
 		"test": "jest",
