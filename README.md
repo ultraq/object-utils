@@ -41,9 +41,11 @@ modifying the target object and returning it.
 
 ### navigate(object, path)
 
-> This is now natively in JavaScript as the optional chaining operator (`?.`).
-> If you have access to that feature, I suggest you use that instead.  If you
-> don't, then this method will still do the job 🙂
+> The null-safe nature of this method is now in JavaScript as the optional
+> chaining operator (`?.`).  If you're not using string paths/selectors to the
+> item in your object, then I suggest you use that instead.  Otherwise, if
+> you're using string path selectors or can't use that method because of browser
+> support, this method will still do the job 🙂
 
 Returns a value from an object via a path string that describes the nesting of
 objects to get to the value, eg:
