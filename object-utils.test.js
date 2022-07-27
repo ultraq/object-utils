@@ -20,7 +20,7 @@ import {equals, merge, navigate} from './object-utils';
 /**
  * Tests for the object utilities.
  */
-describe('ObjectUtils', function() {
+describe('object-utils', function() {
 
 	describe('#equals', function() {
 
@@ -45,7 +45,7 @@ describe('ObjectUtils', function() {
 				a: 1
 			};
 			let object2 = {
-				b: '1'
+				a: '1'
 			};
 			expect(equals(object1, object2)).toBe(false);
 		});
@@ -54,6 +54,9 @@ describe('ObjectUtils', function() {
 			expect(equals(1, null)).toBe(false);
 			expect(equals(null, 1)).toBe(false);
 			expect(equals(null, null)).toBe(true);
+			expect(equals(null, undefined)).toBe(false);
+			expect(equals({ a: null }, { a: undefined })).toBe(false);
+			expect(equals(undefined, undefined)).toBe(true);
 		});
 	});
 

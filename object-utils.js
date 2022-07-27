@@ -22,31 +22,20 @@
  * 
  * @param {*} object1
  * @param {*} object2
- * @return {Boolean}
+ * @return {boolean}
  */
-export function equals(object1 = null, object2 = null) {
+export function equals(object1, object2) {
 
 	// Identity
 	if (object1 === object2) {
 		return true;
 	}
 
-	// One argument null and the other isn't
-	if (object1 === null && object2 !== null) {
-		return false;
-	}
-	if (object1 !== null && object2 === null) {
-		return false;
-	}
-
 	// Compare objects
 	if (typeof object1 === 'object' && typeof object2 === 'object') {
 		let keys1 = Object.keys(object1);
 		let keys2 = Object.keys(object2);
-		if (keys1.length !== keys2.length) {
-			return false;
-		}
-		return keys1.every(key => equals(object1[key], object2[key]));
+		return keys1.length === keys2.length && keys1.every(key => equals(object1[key], object2[key]));
 	}
 
 	// Compare primitives
