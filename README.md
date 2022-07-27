@@ -3,6 +3,7 @@ object-utils
 ============
 
 [![Build Status](https://github.com/ultraq/object-utils/actions/workflows/build.yml/badge.svg)](https://github.com/ultraq/object-utils/actions)
+[![codecov](https://codecov.io/gh/ultraq/object-utils/branch/master/graph/badge.svg?token=whGWdtrpdC)](https://codecov.io/gh/ultraq/object-utils)
 [![npm](https://img.shields.io/npm/v/@ultraq/object-utils.svg?maxAge=3600)](https://www.npmjs.com/package/@ultraq/object-utils)
 [![Bundlephobia minified size](https://img.shields.io/bundlephobia/min/@ultraq/object-utils)](https://bundlephobia.com/result?p=@ultraq/object-utils)
 
