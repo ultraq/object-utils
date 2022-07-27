@@ -2,8 +2,7 @@
 object-utils
 ============
 
-[![Build Status](https://travis-ci.com/ultraq/object-utils.svg?branch=master)](https://travis-ci.com/ultraq/object-utils)
-[![Coverage Status](https://coveralls.io/repos/github/ultraq/object-utils/badge.svg?branch=master)](https://coveralls.io/github/ultraq/object-utils?branch=master)
+[![Build Status](https://github.com/ultraq/object-utils/actions/workflows/build.yml/badge.svg)](https://github.com/ultraq/object-utils/actions)
 [![npm](https://img.shields.io/npm/v/@ultraq/object-utils.svg?maxAge=3600)](https://www.npmjs.com/package/@ultraq/object-utils)
 [![Bundlephobia minified size](https://img.shields.io/bundlephobia/min/@ultraq/object-utils)](https://bundlephobia.com/result?p=@ultraq/object-utils)
 
