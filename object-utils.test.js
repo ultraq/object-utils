@@ -55,7 +55,7 @@ describe('object-utils', function() {
 			expect(equals(null, 1)).toBe(false);
 			expect(equals(null, null)).toBe(true);
 			expect(equals(null, undefined)).toBe(false);
-			expect(equals({ a: null }, { a: undefined })).toBe(false);
+			expect(equals({a: null}, {a: undefined})).toBe(false);
 			expect(equals(undefined, undefined)).toBe(true);
 		});
 	});

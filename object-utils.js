@@ -20,8 +20,8 @@
  * not classes or the like as this function only compares primitives using
  * identity (`===`) comparison.
  * 
- * @param {*} object1
- * @param {*} object2
+ * @param {any} object1
+ * @param {any} object2
  * @return {boolean}
  */
 export function equals(object1, object2) {
@@ -46,9 +46,9 @@ export function equals(object1, object2) {
  * Deep-merges all of the properties of the objects in `sources` with `target`,
  * modifying the target object and returning it.
  * 
- * @param {Object} target
- * @param {...Object} sources
- * @return {Object} The modified target object.
+ * @param {object} target
+ * @param {...object} sources
+ * @return {object} The modified target object.
  */
 export function merge(target = {}, ...sources) {
 
@@ -87,10 +87,10 @@ export function merge(target = {}, ...sources) {
  * > if you're using string path selectors or can't use that method because of
  * > browser support, this method will still do the job 🙂
  * 
- * @param {Object} object
- * @param {String} path A dot-separated path string to get to the desired value
+ * @param {object} object
+ * @param {string} path A dot-separated path string to get to the desired value
  *   within the object
- * @return {Object} The value at the given path within the object, or
+ * @return {object} The value at the given path within the object, or
  *   `undefined` if the path doesn't resolve within the object.
  */
 export function navigate(object, path) {

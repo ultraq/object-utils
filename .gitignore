@@ -3,4 +3,5 @@
 /node_modules
 npm-debug.log
 object-utils.cjs.js*
+object-utils.d.ts
 object-utils.es.js*
